@@ -17,7 +17,7 @@ export const withTooltip = (WrappedComponent) => {
 		render() {
 			return(
 				<div onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeft}>
-					<WrappedComponent isVisible={this.state.isVisible} />
+					<WrappedComponent isVisible={this.state.isVisible} {...this.props} />
 				</div>
 			)
 		}

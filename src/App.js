@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import Movies from "./HOC/Movies";
+import Movie from "./CONTEXT/Movie";
+import UserContext from "./CONTEXT/userContext";
 
 function App() {
+
+  const [currentUser, setCurrentUser] = useState({name: 'Eduardo'})
   return (
-    <div className="App">
-      <Movies />
-    </div>
+    <UserContext.Provider value={currentUser}>
+      <div className="App">
+        <Movie/>
+      </div>
+    </UserContext.Provider>
   );
 }
 
